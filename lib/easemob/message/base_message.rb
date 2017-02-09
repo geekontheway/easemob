@@ -27,7 +27,7 @@ module Easemob
 
       return unless http_response.headers['Content-Type'].index('application/json')
 
-      @body_hash = JSON.parse(@body)
+      @body_hash = JSON.parse(@body.to_s)
 
       @timestamp = @body_hash['timestamp']
       @duration = @body_hash['duration']

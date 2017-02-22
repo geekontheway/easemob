@@ -25,7 +25,7 @@ module Easemob
       @code = http_response.code
       @body = http_response.body
 
-      return unless http_response.headers['Content-Type'].index('application/json')
+      return unless (http_response.headers['Content-Type'] && http_response.headers['Content-Type'].index('application/json'))
 
       @body_hash = JSON.parse(@body.to_s)
 
